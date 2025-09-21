@@ -1,0 +1,11 @@
+---
+- name: update n4 servers
+  hosts: n4
+  
+
+  tasks:
+  - name: create directory
+    file:
+     path: /home/ec2-user/walk_dir
+     state: directory
+...

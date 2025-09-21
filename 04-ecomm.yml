@@ -1,0 +1,18 @@
+---
+- name: Deploy web app
+  hosts: n3
+  become: yes
+
+  tasks:
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
+    - name: Mark /var/www/html as safe for Git
+      command: git config --global --add safe.directory /var/www/html
+
+    - name: pull code
+      git:
+        repo: https://github.com/obongg/ecomm-3.git
+        dest: /var/www/html

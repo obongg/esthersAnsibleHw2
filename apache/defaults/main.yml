@@ -1,0 +1,4 @@
+---
+# defaults file for apache
+-import tasks: install.yml
+-import tasks: config.yml

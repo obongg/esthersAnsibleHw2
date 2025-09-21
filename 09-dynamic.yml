@@ -1,0 +1,10 @@
+---
+- name: dynamic page
+  hosts: g2
+  become: yes
+
+  tasks:
+    - name: dynamic page
+      template:
+        src: dynamic.j2
+        dest: /var/www/html/dynamic.html
