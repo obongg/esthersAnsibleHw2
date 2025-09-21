@@ -8,3 +8,4 @@
       copy:
         src: static.html
         dest: /var/www/html/static.html
+#
