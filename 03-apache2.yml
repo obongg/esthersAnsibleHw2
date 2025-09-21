@@ -1,0 +1,29 @@
+---
+- name: update u5 servers
+  hosts: u5
+  become: yes
+
+  tasks:
+    - name: Install apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: start and enable apache2
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Install git
+      apt:
+        name: git
+        state: present
+
+    - name: deploy site
+      git:
+        repo: https://github.com/obongg/food3.git
+        dest: /var/www/html
+        force: yes 
+        
+

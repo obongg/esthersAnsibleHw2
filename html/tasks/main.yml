@@ -1,0 +1,16 @@
+---
+# tasks file for html
+
+- name: Install git
+  yum:
+    name: git
+    state: present
+
+- name: Mark /var/www/html as safe for Git
+  command: git config --global --add safe.directory /var/www/html
+
+- name: Pull e-commerce app from GitHub
+  git:
+    repo: https://github.com/obongg/ecomm-3.git
+    dest: /var/www/html/ecomm.html
+    force: yes

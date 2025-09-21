@@ -1,0 +1,12 @@
+---
+- name: Custom var page
+  hosts: g2
+  become: yes
+  vars:
+    myusername: Obongg
+
+  tasks:
+    - name: Update Dynamic page
+      template:
+        src: dynamic.j2
+        dest: /var/www/html/dynamic.html

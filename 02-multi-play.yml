@@ -1,0 +1,42 @@
+---
+- name: update n1 servers
+  hosts: n1
+
+  tasks:
+    - name: create directory
+      file:
+        path: /home/ec2-user/walk_dir
+        state: directory
+
+    - name: create directory
+      file:
+        path: /home/ec2-user/walk_dir1
+        state: directory
+
+- name: update n2 servers
+  hosts: n2
+
+  tasks:
+    - name: create directory
+      file:
+        path: /home/ec2-user/walk_dir1
+        state: directory
+
+    - name: create directory
+      file:
+        path: /home/ec2-user/walk_dir2
+        state: directory
+
+- name: update u5 servers
+  hosts: u5
+
+  tasks:
+    - name: create directory
+      file:
+        path: /home/ubuntu/walk1 
+        state: directory
+
+    - name: create directory
+      file:
+        path: /home/ubuntu/con_dir
+        state: directory
