@@ -24,6 +24,5 @@
       git:
         repo: https://github.com/obongg/food3.git
         dest: /var/www/html
-        force: yes 
-        
-
+        force: yes
+#
