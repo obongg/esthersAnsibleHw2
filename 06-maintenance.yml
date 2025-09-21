@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-    - name: under maintenance
+    - name: under maintenancee
       copy:
         src: maintenance.html
         dest: /var/www/html/index.html
